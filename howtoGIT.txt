@@ -1,0 +1,138 @@
+teamet@JET28:~$ git clone https://github.com/Yamakawa0000/test
+Cloning into 'test'...
+remote: Counting objects: 15, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 15 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (15/15), done.
+Checking connectivity... done.
+teamet@JET28:~$ ls
+test
+teamet@JET28:~$ cd test
+teamet@JET28:~/test$ dir
+File\ Explorer.lnk  README.md  hirose.c  yama
+teamet@JET28:~/test$ cd ..
+teamet@JET28:~$ cd test
+teamet@JET28:~/test$ vim yamakawagit.c
+teamet@JET28:~/test$ ls
+File Explorer.lnk  README.md  hirose.c  yama  yamakawagit.c
+teamet@JET28:~/test$ git add yamakawagit.c
+teamet@JET28:~/test$ git commit -m "hello git"
+[master cfbc475] hello git
+ Committer:  <teamet@JET28.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 6 insertions(+)
+ create mode 100644 yamakawagit.c
+teamet@JET28:~/test$ git config --global user.name "Yamakawa0000"
+teamet@JET28:~/test$  git config --global user.email s15191@tokyo.kosen-ac.jp
+teamet@JET28:~/test$ git commit -m "hello git"
+On branch master
+このブランチは 'origin/master' よりも1コミット進んでいます。
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+teamet@JET28:~/test$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': Yamakawa0000
+Password for 'https://Yamakawa0000@github.com':
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 338 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Yamakawa0000/test
+   932d94b..cfbc475  master -> master
+teamet@JET28:~/test$ vim kosen.c
+teamet@JET28:~/test$ ls
+File Explorer.lnk  README.md  hirose.c  kosen.c  yama  yamakawagit.c
+teamet@JET28:~/test$ vim test2.c
+teamet@JET28:~/test$ ls
+File Explorer.lnk  README.md  hirose.c  kosen.c  test2.c  yama  yamakawagit.c
+teamet@JET28:~/test$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+teamet@JET28:~/test$ vim test.txt
+teamet@JET28:~/test$
+teamet@JET28:~/test$ vim test2.txt
+teamet@JET28:~/test$ ls
+File Explorer.lnk  hirose.c  test.txt  test2.txt  yamakawagit.c
+README.md          kosen.c   test2.c   yama
+teamet@JET28:~/test$ rm *.lnk
+teamet@JET28:~/test$ ls
+README.md  hirose.c  kosen.c  test.txt  test2.c  test2.txt  yama  yamakawagit.c
+teamet@JET28:~/test$ git add .
+teamet@JET28:~/test$ git commit -m "hello git"
+[master 02df07a] hello git
+ 5 files changed, 5 insertions(+)
+ delete mode 100644 File Explorer.lnk
+ create mode 100644 kosen.c
+ create mode 100644 test.txt
+ create mode 100644 test2.c
+ create mode 100644 test2.txt
+teamet@JET28:~/test$ git push origin master
+Username for 'https://github.com': Yamakawa0000
+Password for 'https://Yamakawa0000@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Yamakawa0000/test/'
+teamet@JET28:~/test$ git push origin master
+Username for 'https://github.com': Yamakawa0000
+Password for 'https://Yamakawa0000@github.com':
+To https://github.com/Yamakawa0000/test
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Yamakawa0000/test'
+teamet@JET28:~/test$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/Yamakawa0000/test
+   cfbc475..119da2d  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ ggg.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ggg.txt
+teamet@JET28:~/test$ ls
+README.md  hirose.c  test.txt  test2.txt  yamakawagit.c
+ggg.txt    kosen.c   test2.c   yama
+teamet@JET28:~/test$ git push origin master
+Username for 'https://github.com': Yamakawa0000
+Password for 'https://Yamakawa0000@github.com':
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 809 bytes | 0 bytes/s, done.
+Total 8 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Yamakawa0000/test
+   119da2d..6bd1a78  master -> master
+teamet@JET28:~/test$
